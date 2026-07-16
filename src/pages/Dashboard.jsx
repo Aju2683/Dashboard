@@ -78,11 +78,14 @@ const menuItems = [
 ];
 
 function Dashboard() {
-  const [activePage, setActivePage] = useState("dashboard");
+  const [activePage, setActivePage] = useState("login");
 
   const isAuthPage = ["signup", "login", "recover", "reset"].includes(
     activePage
   );
+  if (isAuthPage) {
+  return <>{renderPage()}</>;
+}
 
   function renderPage() {
     switch (activePage) {
